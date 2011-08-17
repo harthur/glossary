@@ -64,8 +64,6 @@ console.log(keywords); // ["Middle East crisis"]
 
 Use `verbose` to also get the count of each term:
 
-If you don't want terms that are sub-terms of other terms, use `collapse`:
-
 ```javascript
 var glossary = require("./glossary")({ verbose: true });
 
