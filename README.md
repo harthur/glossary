@@ -5,9 +5,9 @@ glossary is a JavaScript module that extracts keywords from text (aka "term extr
 ```javascript
 var glossary = require("glossary");
 
-var keywords = glossary.keywords("Her dog walking service is the best in the business");
+var keywords = glossary.extract("Her cake shop is the best in the business");
 
-console.log(keywords)  // ["dog", "service", "business"]
+console.log(keywords)  // ["cake", "shop", "cake shop", "business"]
 ```
 
 `glossary` is standalone and uses part-of-speech analysis to extract the relevant terms.
@@ -24,7 +24,7 @@ npm install glossary
 
 #### blacklisting
 
-Let's say you wanted to auto-tag npm modules based on their descriptions, but didn't want to include really common words in descriptions like "script":
+Use `blacklist` to remove unwanted terms from any extraction:
 
 ```javascript
 var glossary = require("./glossary")({
@@ -38,7 +38,7 @@ console.log(keywords); // ["color", "conversion"]
 
 #### minimum frequency
 
-If you want to limit the terms to only those that occur with a certain frequency, use the `minFreq` option:
+Use `minFreq` to limit the terms to only those that occur with a certain frequency:
 
 ```javascript
 var glossary = require("./glossary")({ minFreq: 2 });
@@ -50,7 +50,7 @@ console.log(keywords); // ["pears"]
 
 #### sub-terms
 
-If you don't want terms that are sub-terms of other terms, use `collapse`:
+Use `collapse` to remove terms that are sub-terms of other terms:
 
 ```javascript
 var glossary = require("./glossary")({ collapse: true });
@@ -58,19 +58,21 @@ var glossary = require("./glossary")({ collapse: true });
 var keywords = glossary.extract("The Middle East crisis is getting worse");
 
 console.log(keywords); // ["Middle East crisis"]
+```
 
 #### verbose output
 
-If you also want the count of each term, use `verbose` :
+Use `verbose` to also get the count of each term:
 
 If you don't want terms that are sub-terms of other terms, use `collapse`:
 
 ```javascript
 var glossary = require("./glossary")({ verbose: true });
 
-var keywords = glossary.extract("The pears from the farm are the best");
+var keywords = glossary.extract("The pears from the farm are good");
 
 console.log(keywords); // [ { word: 'pears', count: 1 }, { word: 'farm', count: 1 } ]
+```
 
 # propers
 
