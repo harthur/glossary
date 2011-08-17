@@ -1,0 +1,17 @@
+{
+    "name": "glossary",
+    "description": "Term extraction module",
+    "version": "0.1.0",
+    "author": "Heather Arthur <fayearthur@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/harthur/glossary.git"
+    },
+    "main": "./glossary",
+    "dependencies": {
+        "natural": ">=0.0.28",
+        "pos": "0.1.x",
+        "underscore": "1.1.x"
+    },
+    "keywords": ["term extraction", "keyword", "tag", "auto tag"]
+}
