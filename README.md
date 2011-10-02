@@ -27,7 +27,7 @@ npm install glossary
 Use `blacklist` to remove unwanted terms from any extraction:
 
 ```javascript
-var glossary = require("./glossary")({
+var glossary = require("glossary")({
    blacklist: ["library", "script", "api", "function"]
 });
 
@@ -41,7 +41,7 @@ console.log(keywords); // ["color", "conversion"]
 Use `minFreq` to limit the terms to only those that occur with a certain frequency:
 
 ```javascript
-var glossary = require("./glossary")({ minFreq: 2 });
+var glossary = require("glossary")({ minFreq: 2 });
 
 var keywords = glossary.extract("Kasey's pears are the best pears in Canada");
 
@@ -53,7 +53,7 @@ console.log(keywords); // ["pears"]
 Use `collapse` to remove terms that are sub-terms of other terms:
 
 ```javascript
-var glossary = require("./glossary")({ collapse: true });
+var glossary = require("glossary")({ collapse: true });
 
 var keywords = glossary.extract("The Middle East crisis is getting worse");
 
@@ -63,8 +63,6 @@ console.log(keywords); // ["Middle East crisis"]
 #### verbose output
 
 Use `verbose` to also get the count of each term:
-
-If you don't want terms that are sub-terms of other terms, use `collapse`:
 
 ```javascript
 var glossary = require("./glossary")({ verbose: true });
