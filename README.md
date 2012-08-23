@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/harthur/glossary.png)](http://travis-ci.org/harthur/glossary)
 # glossary
 
 glossary is a JavaScript module that extracts keywords from text (aka "term extraction" or "auto tagging"). It takes a string of text and returns an array of terms that are relevant to the content:
