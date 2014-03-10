@@ -17,9 +17,11 @@ function Glossary(opts) {
 }
 
 Glossary.prototype.extract = function(text) {
-   var tags = new pos.Tagger().tag(new pos.Lexer().lex(text)),
-       terms = {},
-       multiterm = [];
+   var words = new pos.Lexer().lex(text);
+   var tags = new pos.Tagger().tag(words);
+
+   var terms = {};
+   var multiterm = [];
 
    function add(word) {
      var norm = normalize(word);
