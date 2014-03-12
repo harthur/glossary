@@ -65,7 +65,7 @@ console.log(keywords); // ["Middle East crisis"]
 Use `verbose` to also get the count of each term:
 
 ```javascript
-var glossary = require("./glossary")({ verbose: true });
+var glossary = require("glossary")({ verbose: true });
 
 var keywords = glossary.extract("The pears from the farm are good");
 
